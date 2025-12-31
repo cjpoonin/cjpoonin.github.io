@@ -1,1 +1,445 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- logo -->
+    <title>Poonin | Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedMode = localStorage.getItem("theme") || "light";
+            setMode(savedMode);
+        });
+
+        function setMode(mode) {
+            const body = document.getElementById("body");
+            const modeIcon = document.getElementById("modeIcon");
+
+            body.setAttribute("data-bs-theme", mode);
+            localStorage.setItem("theme", mode);
+
+            modeIcon.src = mode === "dark"
+                ? "img/light-mode.png"
+                : "img/night-mode.png";
+        }
+
+        function changeMode() {
+            const current = document.getElementById("body").getAttribute("data-bs-theme");
+            const next = current === "light" ? "dark" : "light";
+            setMode(next);
+        }
+    </script>
+
+
+</head>
+
+<body id="body">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg glass-nav shadow-sm py-3 fixed-top" >
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <a href="#email" class="mx-2" aria-label="Email">
+                    <img src="img/email.png" alt="Email Icon" height="32">
+                </a>
+                <a href="#telegram" class="mx-2" aria-label="Telegram">
+                    <img src="img/telegram.png" alt="Telegram Icon" height="32">
+                </a>
+                <a href="#linkedin" class="mx-2" aria-label="LinkedIn">
+                    <img src="img/linkedin.png" alt="LinkedIn Icon" height="32">
+                </a>
+            </div>
+
+            <a class="navbar-brand fw-normal position-absolute start-50 translate-middle-x" href="#home">
+                CJ Poonin
+            </a>
+
+            <div class="d-flex align-items-center">
+                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto border rounded-4 px-2 py-1 glass-list">
+                        <li class="nav-item">
+                            <a class="nav-link mx-3" href="#work">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-3" href="#info">Info</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-3" href="#contact">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <button id="colorBtn" class="btn btn-light mx-5 rounded-5 border p-2" onclick="changeMode()">
+                    <img id="modeIcon" src="img/night-mode.png" alt="Night Mode" height="28">
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div class="container-fluid home 100dvh py-5" id="home">
+        <div class="container text-center py-5" style="min-height:70vh; display:flex; align-items:center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    </div>
+                    <h1 class="display-3 fw-light">
+                        Tech Enthusiast
+                    </h1>
+                    <p class="mt-2 text-muted" style="font-size: 0.9rem;">
+                        – "Simplicity is the Key" –
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="display-1 fw-semibold" style="font-size: 6rem;">
+                        Hello,
+                    </h1>
+                    <p class="my-3" style="font-size: 0.9rem; line-height: 1.6;" >
+                        My name is <strong>Carl</strong> pursuing a career in website
+                        development and graphic design, focused on creating clean,
+                        functional, and visually engaging digital solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <div class="container-fluid work 100dvh" id="work">
+        <div class="container text-center">
+            <div class="row my-5">
+                <div class="col">
+                    <div class="display-1 fw-semibold text-end py-5 mt-5" style="font-size: 6rem;">
+                        Work's
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 m-5">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-0">
+                            <a href="">
+                                <img src="img/A04Thumbnail.png" alt="This image doesn't work in this browser."
+                                    class="img-fluid w-100 rounded">
+                                <div class="view-text text-dark">View Site</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 m-5">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-0">
+                            <a href="">
+                                <img src="img/A05Thumbnail.png" alt="This image doesn't work in this browser."
+                                    class="img-fluid w-100 rounded">
+                                <div class="view-text text-dark">View Site</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 m-5">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-0">
+                            <a href="">
+                                <img src="img/A06Thumbnail.png" alt="This image doesn't work in this browser."
+                                    class="img-fluid w-100 rounded">
+                                <div class="view-text text-dark">View Site</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 m-5">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-0">
+                            <a href="">
+                                <img src="img/A07Thumbnail.png" alt="This image doesn't work in this browser."
+                                    class="img-fluid w-100 rounded">
+                                <div class="view-text text-dark">View Site</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 m-5">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-0">
+                            <a href="">
+                                <img src="img/A08Thumbnail.png" alt="This image doesn't work in this browser."
+                                    class="img-fluid w-100 rounded">
+                                <div class="view-text text-dark">View Site</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 m-5">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-0">
+                            <a href="">
+                                <img src="img/A05Thumbnail.png" alt="This image doesn't work in this browser."
+                                    class="img-fluid w-100 rounded">
+                                <div class="view-text text-dark">View Site</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn rounded-5 my-3 text-center text-muted">View more</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <div class="container-fluid info" id="info">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="display-1 fw-semibold text-end py-5 my-5" style="font-size: 6rem;">
+                        Info
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <div class="img-container">
+                        <img src="img/profile.jpg" alt="" class="img-fluid w-100 rounded-5 shadow grayscale-img">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <div class="display-2">Carl Joseph Poonin</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <ul>
+                                <li class="text-muted">
+                                    Junior Level
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <p>
+                                Hi, I'm a Third-year student at the Polytechnic University of the Philippines, Sto.
+                                Tomas Campus, pursuing a degree in Information Technology. I have a deep passion for
+                                web
+                                development, programming, and IT, and I am committed to enhancing my technical
+                                expertise
+                                in these fields.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <hr>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <h6>Skills</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">HTML</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">CSS</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">C</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">JAVASCRIPT</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">C++</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">PYTHON</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">JAVA</div>
+                        </div>
+                        <div class="col">
+                            <div class="btn btn-secondary rounded-5 m-2 px-4">MySQL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 my-2">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="">
+                                        <img src="img/puplogo 1.png" alt="This image doesn't work in this browser."
+                                            class="img-fluid w-75 rounded center">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="card-title fw-semibold">College</h3>
+                                    <p class="card-text text-muted">Diploma in Information Technology</p>
+                                    <ul>
+                                        <li>
+                                            Third-year - Current
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 my-2">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="">
+                                        <img src="img/NST_logo 1.png" alt="This image doesn't work in this browser."
+                                            class="img-fluid w-75 rounded center">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="card-title fw-semibold">Senior High School</h3>
+                                    <p class="card-text text-muted">Nova Schola Tanauan Senior High School Science,
+                                        Technology, Engineering, Mathematics Strand 2020 – 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 my-2">
+                    <div class="card w-100 custom-card mx-auto rounded-5">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <a href="">
+                                        <img src="img/NNHS_logo 1.png" alt="This image doesn't work in this browser."
+                                            class="img-fluid w-75 rounded center">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="card-title fw-semibold">Junior High School</h3>
+                                    <p class="card-text text-muted">Natatas National High School Junior High School
+                                        (Grades 7–10) 2016 – 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+    </div>
+
+    <div class="container-fluid contact py-5" id="contact" style="min-height: 70vh;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-1 fw-semibold text-end py-5" style="font-size: 6rem;">
+                        Contacts
+                    </h1>
+                </div>
+            </div>
+            <div class="row gy-5">
+                <div class="col-lg-6">
+                    <p class="mb-4" style="font-size: 0.95rem; line-height: 1.7;">
+                        I'm open to opportunities and collaborations. Feel free to reach out using the form below
+                        or through my social media channels. I look forward to connecting with you!
+                    </p>
+                    <ul class="list-unstyled fs-6">
+                        <li class="mb-2">
+                            <strong>Email:</strong>
+                            <a href="mailto:cjaypoonin@gmail.com" class="text-decoration-none">
+                                cjaypoonin@gmail.com
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <strong>Facebook:</strong>
+                            <a href="" class="text-decoration-none">facebook.com/cjaypoonin</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <strong>Telegram:</strong>
+                            <a href="" class="text-decoration-none">@cjaypoonin</a>
+                        </li>
+
+                        <li class="mb-2">
+                            <strong>MS Teams:</strong>
+                            <a href="" class="text-decoration-none">cjaypoonin@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <form class="bg-dark text-white p-5 rounded-5 shadow">
+
+                        <div class="mb-4">
+                            <label for="name" class="form-label fw-semibold">Name</label>
+                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Your Name">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label fw-semibold">Email Address</label>
+                            <input type="email" class="form-control form-control-lg" id="email"
+                                placeholder="you@example.com">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-semibold">Message</label>
+                            <textarea class="form-control form-control-lg" id="message" rows="4"
+                                placeholder="Write your message..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-light btn-lg px-4 fw-semibold">
+                            Send Message
+                        </button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid py-3 bg-dark text-white">
+        <div class="row text-center">
+            <div class="col">
+                <p class="mb-0">&copy; 2025 Carl Joseph Poonin Works. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
