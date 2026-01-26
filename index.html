@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- logo -->
+    <link rel="icon" href="img/personal_logo.png" type="image/png">
     <title>Poonin | Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const savedMode = localStorage.getItem("theme") || "light";
@@ -36,58 +37,48 @@
         }
     </script>
 
-
 </head>
 
 <body id="body">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg glass-nav shadow-sm py-3 fixed-top" >
-        <div class="container d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <a href="#email" class="mx-2" aria-label="Email">
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg glass-nav shadow-sm py-3 fixed-top">
+        <div class="container">
+            <div class="d-flex align-items-center order-0">
+                <a href="mailto:cjaypoonin@gmail.com" class="me-2" aria-label="Email" target="_blank">
                     <img src="img/email.png" alt="Email Icon" height="32">
                 </a>
-                <a href="#telegram" class="mx-2" aria-label="Telegram">
+                <a href="https://t.me/Crljsphpnn" class="me-2" aria-label="Telegram" target="_blank">
                     <img src="img/telegram.png" alt="Telegram Icon" height="32">
                 </a>
-                <a href="#linkedin" class="mx-2" aria-label="LinkedIn">
-                    <img src="img/linkedin.png" alt="LinkedIn Icon" height="32">
-                </a>
             </div>
-
-            <a class="navbar-brand fw-normal position-absolute start-50 translate-middle-x" href="#home">
-                CJ Poonin
-            </a>
-
-            <div class="d-flex align-items-center">
-                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
-                    aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="mainMenu">
-                    <ul class="navbar-nav ms-auto border rounded-4 px-2 py-1 glass-list">
-                        <li class="nav-item">
-                            <a class="nav-link mx-3" href="#work">Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-3" href="#info">Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-3" href="#contact">Contacts</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button id="colorBtn" class="btn btn-light mx-5 rounded-5 border p-2" onclick="changeMode()">
+            <button class="navbar-toggler order-2 order-lg-2 border-0 p-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse order-3 order-lg-2 mt-3 mt-lg-0" id="mainMenu">
+                <ul class="navbar-nav ms-auto mb-3 mb-lg-0 border rounded-4 px-2 py-2 py-lg-1 glass-list">
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 mx-lg-3 py-2 py-lg-0" href="#work">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 mx-lg-3 py-2 py-lg-0" href="#info">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-2 mx-lg-3 py-2 py-lg-0" href="#contact">Contacts</a>
+                    </li>
+                </ul>
+                <button id="colorBtn"
+                    class="btn btn-light ms-lg-3 rounded-5 border p-2 d-block d-lg-inline-block mt-3 mt-lg-0 mx-auto mx-lg-0"
+                    onclick="changeMode()">
                     <img id="modeIcon" src="img/night-mode.png" alt="Night Mode" height="28">
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Home Section -->
+    <!-- home section -->
     <div class="container-fluid home 100dvh py-5" id="home">
         <div class="container text-center py-5" style="min-height:70vh; display:flex; align-items:center;">
             <div class="container">
@@ -109,7 +100,7 @@
                     <h1 class="display-1 fw-semibold" style="font-size: 6rem;">
                         Hello,
                     </h1>
-                    <p class="my-3" style="font-size: 0.9rem; line-height: 1.6;" >
+                    <p class="my-3" style="font-size: 1rem; line-height: 1.6;">
                         My name is <strong>Carl</strong> pursuing a career in website
                         development and graphic design, focused on creating clean,
                         functional, and visually engaging digital solutions.
@@ -123,6 +114,7 @@
         <hr>
     </div>
 
+    <!-- work section -->
     <div class="container-fluid work 100dvh" id="work">
         <div class="container text-center">
             <div class="row my-5">
@@ -132,11 +124,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="row justify-content-center">
-                <div class="col-12 col-md-4 m-5">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                    <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
-                            <a href="">
+                            <a href="Projects/A04/index.html">
                                 <img src="img/A04Thumbnail.png" alt="This image doesn't work in this browser."
                                     class="img-fluid w-100 rounded">
                                 <div class="view-text text-dark">View Site</div>
@@ -144,63 +137,53 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 m-5">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-0">
-                            <a href="">
-                                <img src="img/A05Thumbnail.png" alt="This image doesn't work in this browser."
-                                    class="img-fluid w-100 rounded">
-                                <div class="view-text text-dark">View Site</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 m-5">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-0">
-                            <a href="">
-                                <img src="img/A06Thumbnail.png" alt="This image doesn't work in this browser."
-                                    class="img-fluid w-100 rounded">
-                                <div class="view-text text-dark">View Site</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 m-5">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-0">
-                            <a href="">
-                                <img src="img/A07Thumbnail.png" alt="This image doesn't work in this browser."
-                                    class="img-fluid w-100 rounded">
-                                <div class="view-text text-dark">View Site</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 m-5">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-0">
-                            <a href="">
-                                <img src="img/A08Thumbnail.png" alt="This image doesn't work in this browser."
-                                    class="img-fluid w-100 rounded">
-                                <div class="view-text text-dark">View Site</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 m-5">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-0">
-                            <a href="">
-                                <img src="img/A05Thumbnail.png" alt="This image doesn't work in this browser."
-                                    class="img-fluid w-100 rounded">
-                                <div class="view-text text-dark">View Site</div>
-                            </a>
-                        </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="card w-100 custom-card mx-auto rounded-4">
+                    <div class="card-body p-0">
+                        <a href="Projects/A05/index.html">
+                            <img src="img/A05Thumbnail.png" alt="This image doesn't work in this browser."
+                                class="img-fluid w-100 rounded">
+                            <div class="view-text text-dark"">View Site</div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="btn rounded-5 my-3 text-center text-muted">View more</div>
+            <div class=" col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="card w-100 custom-card mx-auto rounded-4">
+                    <div class="card-body p-0">
+                        <a href="Projects/A06/index.html">
+                            <img src="img/A06Thumbnail.png"
+                                alt="This image doesn't work in this browser."
+                                class="img-fluid w-100 rounded">
+                            <div class="view-text text-dark">View Site</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="card w-100 custom-card mx-auto rounded-4">
+                    <div class="card-body p-0">
+                        <a href="Projects/A07/index.html">
+                            <img src="img/A07Thumbnail.png"
+                                alt="This image doesn't work in this browser."
+                                class="img-fluid w-100 rounded">
+                            <div class="view-text text-dark">View Site</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="card w-100 custom-card mx-auto rounded-4">
+                    <div class="card-body p-0">
+                        <a href="Projects/A08/index.html">
+                            <img src="img/A08Thumbnail.png"
+                                alt="This image doesn't work in this browser."
+                                class="img-fluid w-100 rounded">
+                            <div class="view-text text-dark">View Site</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -208,100 +191,67 @@
         <hr>
     </div>
 
-    <div class="container-fluid info" id="info">
+    <!-- info section -->
+    <div class="container-fluid py-5" id="info">
         <div class="container">
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col">
-                    <div class="display-1 fw-semibold text-end py-5 my-5" style="font-size: 6rem;">
+                    <h1 class="display-1 fw-bold text-end text-dark mb-5" style="font-size: 6rem;">
                         Info
-                    </div>
+                    </h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 my-2">
-                    <div class="img-container">
-                        <img src="img/profile.jpg" alt="" class="img-fluid w-100 rounded-5 shadow grayscale-img">
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="position-relative overflow-hidden rounded-4 shadow-lg">
+                        <img src="img/profile.jpg" alt="Carl Joseph Poonin"
+                            class="img-fluid w-100 rounded-4" style="filter: grayscale(100%);">
                     </div>
                 </div>
-                <div class="col">
-                    <div class="row mt-3">
-                        <div class="col">
-                            <div class="display-2">Carl Joseph Poonin</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <ul>
-                                <li class="text-muted">
-                                    Junior Level
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row my-3">
-                        <div class="col">
-                            <p>
-                                Hi, I'm a Third-year student at the Polytechnic University of the Philippines, Sto.
-                                Tomas Campus, pursuing a degree in Information Technology. I have a deep passion for
-                                web
-                                development, programming, and IT, and I am committed to enhancing my technical
-                                expertise
-                                in these fields.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <hr>
-                    </div>
-                    <div class="row my-3">
-                        <div class="col">
-                            <h6>Skills</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">HTML</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">CSS</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">C</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">JAVASCRIPT</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">C++</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">PYTHON</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">JAVA</div>
-                        </div>
-                        <div class="col">
-                            <div class="btn btn-secondary rounded-5 m-2 px-4">MySQL</div>
+                <div class="col-md-6">
+                    <div class="h-100 d-flex flex-column justify-content-center">
+                        <h2 class="display-3 fw-bold text-dark mb-3">Carl Joseph Poonin</h2>
+                        <span class="badge bg-dark rounded-pill px-4 py-2 fs-6 mb-4 align-self-start">
+                            Junior Level
+                        </span>
+                        <p class="lead text-secondary mb-4" style="line-height: 1.8;">
+                            Hi, I'm a Third-year student at the Polytechnic University of the Philippines,
+                            Sto. Tomas Campus,
+                            pursuing a degree in Information Technology. I have a deep passion for web
+                            development, programming,
+                            and IT, and I am committed to enhancing my technical expertise in these fields.
+                        </p>
+                        <hr class="my-4">
+                        <h5 class="fw-bold text-dark mb-4">Skills</h5>
+                        <div class="d-flex flex-wrap gap-3">
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">HTML</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">CSS</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">C</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">JAVASCRIPT</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">C++</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">PYTHON</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">JAVA</span>
+                            <span class="badge bg-dark rounded-pill px-4 py-2 fs-6">MySQL</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6 my-2">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <a href="">
-                                        <img src="img/puplogo 1.png" alt="This image doesn't work in this browser."
-                                            class="img-fluid w-75 rounded center">
-                                    </a>
+
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="card border-0 shadow rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="img/puplogo 1.png" alt="PUP Logo" class="img-fluid rounded-3">
                                 </div>
-                                <div class="col-8">
-                                    <h3 class="card-title fw-semibold">College</h3>
-                                    <p class="card-text text-muted">Diploma in Information Technology</p>
-                                    <ul>
-                                        <li>
+                                <div class="col-9">
+                                    <h4 class="card-title fw-bold mb-2">College</h4>
+                                    <p class="card-text text-muted mb-3">Diploma in Information Technology
+                                    </p>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="text-secondary">
                                             Third-year - Current
                                         </li>
                                     </ul>
@@ -310,49 +260,49 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 my-2">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <a href="">
-                                        <img src="img/NST_logo 1.png" alt="This image doesn't work in this browser."
-                                            class="img-fluid w-75 rounded center">
-                                    </a>
+                <div class="col-12 col-lg-6">
+                    <div class="card border-0 shadow rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="img/NST_logo 1.png" alt="NST Logo"
+                                        class="img-fluid rounded-3">
                                 </div>
-                                <div class="col-8">
-                                    <h3 class="card-title fw-semibold">Senior High School</h3>
-                                    <p class="card-text text-muted">Nova Schola Tanauan Senior High School Science,
-                                        Technology, Engineering, Mathematics Strand 2020 – 2022</p>
+                                <div class="col-9">
+                                    <h4 class="card-title fw-bold mb-2">Senior High School</h4>
+                                    <p class="card-text text-muted mb-0">
+                                        Nova Schola Tanauan Senior High School<br>
+                                        <small>Science, Technology, Engineering, Mathematics
+                                            Strand</small><br>
+                                        <small class="text-secondary">2020 – 2022</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="card border-0 shadow rounded-4 h-100">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-3">
+                                    <img src="img/NNHS_logo 1.png" alt="NNHS Logo"
+                                        class="img-fluid rounded-3">
+                                </div>
+                                <div class="col-9">
+                                    <h4 class="card-title fw-bold mb-2">Junior High School</h4>
+                                    <p class="card-text text-muted mb-0">
+                                        Natatas National High School<br>
+                                        <small>Junior High School (Grades 7–10)</small><br>
+                                        <small class="text-secondary">2016 – 2020</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6 my-2">
-                    <div class="card w-100 custom-card mx-auto rounded-5">
-                        <div class="card-body p-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <a href="">
-                                        <img src="img/NNHS_logo 1.png" alt="This image doesn't work in this browser."
-                                            class="img-fluid w-75 rounded center">
-                                    </a>
-                                </div>
-                                <div class="col-8">
-                                    <h3 class="card-title fw-semibold">Junior High School</h3>
-                                    <p class="card-text text-muted">Natatas National High School Junior High School
-                                        (Grades 7–10) 2016 – 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 
@@ -360,86 +310,81 @@
         <hr>
     </div>
 
-    <div class="container-fluid contact py-5" id="contact" style="min-height: 70vh;">
+    <!-- contact section -->
+    <div class="container-fluid contact py-5" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h1 class="display-1 fw-semibold text-end py-5" style="font-size: 6rem;">
-                        Contacts
+                        Contact
                     </h1>
                 </div>
             </div>
-            <div class="row gy-5">
+            <div class="row">
                 <div class="col-lg-6">
                     <p class="mb-4" style="font-size: 0.95rem; line-height: 1.7;">
-                        I'm open to opportunities and collaborations. Feel free to reach out using the form below
-                        or through my social media channels. I look forward to connecting with you!
+                        I'm always open to discussing new opportunities, collaborations, or innovative projects. 
+                        Please feel free to reach out through the contact form or connect with me via the 
+                        channels listed below.
                     </p>
                     <ul class="list-unstyled fs-6">
-                        <li class="mb-2">
+                        <li class="mb-3">
                             <strong>Email:</strong>
-                            <a href="mailto:cjaypoonin@gmail.com" class="text-decoration-none">
+                            <a href="mailto:cjaypoonin@gmail.com" class="text-decoration-none ms-2" target="_blank">
                                 cjaypoonin@gmail.com
                             </a>
                         </li>
-                        <li class="mb-2">
-                            <strong>Facebook:</strong>
-                            <a href="" class="text-decoration-none">facebook.com/cjaypoonin</a>
+                        <li class="mb-3">
+                            <strong>GitHub:</strong>
+                            <a href="https://github.com/cjpoonin" class="text-decoration-none ms-2" target="_blank">github.com/cjaypoonin</a>
                         </li>
-
-                        <li class="mb-2">
+                        <li class="mb-3">
                             <strong>Telegram:</strong>
-                            <a href="" class="text-decoration-none">@cjaypoonin</a>
-                        </li>
-
-                        <li class="mb-2">
-                            <strong>MS Teams:</strong>
-                            <a href="" class="text-decoration-none">cjaypoonin@gmail.com</a>
+                            <a href="https://t.me/Crljsphpnn" class="text-decoration-none ms-2" target="_blank">@cjaypoonin</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-6">
-                    <form class="bg-dark text-white p-5 rounded-5 shadow">
-
-                        <div class="mb-4">
-                            <label for="name" class="form-label fw-semibold">Name</label>
-                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Your Name">
+                <div class="col-lg-6 col-sm-12 mx-auto">
+                    <form class="form-control bg-dark text-white p-3 rounded-4 shadow">
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-semibold">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
                         </div>
-
-                        <div class="mb-4">
+                        <div class="mb-3">
                             <label for="email" class="form-label fw-semibold">Email Address</label>
-                            <input type="email" class="form-control form-control-lg" id="email"
-                                placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com" required>
                         </div>
-
-                        <div class="mb-4">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-semibold">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="What is this regarding?" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="message" class="form-label fw-semibold">Message</label>
-                            <textarea class="form-control form-control-lg" id="message" rows="4"
-                                placeholder="Write your message..."></textarea>
+                                <textarea class="form-control" id="message" rows="2" placeholder="Please provide details about your inquiry..." required></textarea>
                         </div>
-
-                        <button type="submit" class="btn btn-light btn-lg px-4 fw-semibold">
+                        <button type="submit" class="btn btn-warning px-4 fw-semibold w-100">
                             Send Message
                         </button>
-
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <footer class="container-fluid py-3 bg-dark text-white">
-        <div class="row text-center">
-            <div class="col">
+    <footer>
+        <div class="row text-center py-3 bg-dark text-white">
+            <div class="col-12">
                 <p class="mb-0">&copy; 2025 Carl Joseph Poonin Works. All rights reserved.</p>
             </div>
         </div>
     </footer>
+        
 
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+    
 </body>
 
 </html>
