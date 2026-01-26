@@ -89,14 +89,15 @@ body.dark-mode .nav-link {
     opacity: 1;
 }
 
-.grayscale-img {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-    object-fit: cover; /* Ensures the image covers the container nicely */
+/* profile picture */
+.profile-img img {
+  filter: grayscale(100%);
+  transition: 
+    transform 0.4s ease,
+    filter 0.4s ease;
 }
 
-/* Optional: show color and slight zoom on hover */
-.grayscale-img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
+.profile-img:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.06);
 }
