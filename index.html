@@ -4,18 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/personal_logo.png" type="image/png">
+    <link rel="icon" type="image/png" href="img/personal_logo.png">
     <title>Poonin | Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const savedMode = localStorage.getItem("theme") || "light";
             setMode(savedMode);
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                offset: 100,
+                mirror: true
+            });
         });
 
         function setMode(mode) {
@@ -85,10 +93,10 @@
                 <div class="row">
                     <div class="col-12">
                     </div>
-                    <h1 class="display-3 fw-light">
+                    <h1 class="display-3 fw-light" data-aos="fade">
                         Tech Enthusiast
                     </h1>
-                    <p class="mt-2 text-muted" style="font-size: 0.9rem;">
+                    <p class="mt-2 text-muted" style="font-size: 0.9rem;" data-aos="fade" data-aos-delay="200">
                         – "Simplicity is the Key" –
                     </p>
                 </div>
@@ -97,10 +105,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h1 class="display-1 fw-semibold" style="font-size: 6rem;">
+                    <h1 class="display-1 fw-semibold" style="font-size: 6rem;" data-aos="fade-up">
                         Hello,
                     </h1>
-                    <p class="my-3" style="font-size: 1rem; line-height: 1.6;">
+                    <p style="font-size: 1rem; line-height: 1.6;">
                         My name is <strong>Carl</strong> pursuing a career in website
                         development and graphic design, focused on creating clean,
                         functional, and visually engaging digital solutions.
@@ -119,16 +127,16 @@
         <div class="container text-center">
             <div class="row my-5">
                 <div class="col">
-                    <div class="display-1 fw-semibold text-end py-5 mt-5" style="font-size: 6rem;">
+                    <div class="display-1 fw-semibold text-end py-5 mt-5" style="font-size: 6rem;" data-aos="fade-up">
                         Work's
                     </div>
                 </div>
             </div>
-            <div class="display-3 my-2 mx-auto">
+            <div class="display-3 my-2 mx-auto" data-aos="fade-up">
                 Multimedia Projects
             </div>
             <div class="row justify-content-center">
-                <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
                             <a href="Projects/Multimedia/A04/index.html">
@@ -139,18 +147,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
                             <a href="Projects/Multimedia/A05/index.html">
                                 <img src="img/A05Thumbnail.png" alt="This image doesn't work in this browser."
                                     class="img-fluid w-100 rounded">
-                                <div class="view-text text-secondary"">View Site</div>
+                                <div class="view-text text-secondary">View Site</div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class=" col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
                             <a href="Projects/Multimedia/A06/index.html">
@@ -162,7 +170,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
                             <a href="Projects/Multimedia/A07/index.html">
@@ -174,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
                             <a href="Projects/Multimedia/A08/index.html">
@@ -187,11 +195,11 @@
                     </div>
                 </div>
             </div>
-            <div class="display-3 my-2 mt-5 mx-auto">
+            <div class="display-3 my-2 mt-5 mx-auto" data-aos="fade-up">
                 Mobile Application Development Projects
             </div>
             <div class="row justify-content-center">
-                <div class="col-xl-4 col-md-6 col-sm-12 my-3">
+                <div class="col-xl-4 col-md-6 col-sm-12 my-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="card w-100 custom-card mx-auto rounded-4">
                         <div class="card-body p-0">
                             <a href="Projects/A04/index.html">
@@ -215,19 +223,19 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col">
-                    <h1 class="display-1 fw-bold text-end mb-5" style="font-size: 6rem;">
+                    <h1 class="display-1 fw-bold text-end mb-5" style="font-size: 6rem;" data-aos="fade-up">
                         Info
                     </h1>
                 </div>
             </div>
             <div class="row g-4 mb-5">
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up">
                     <div class="profile-img position-relative overflow-hidden rounded-4 shadow-lg">
                         <img src="img/profile.jpg" alt="Carl Joseph Poonin"
                         class="img-fluid w-100 rounded-4">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-100 d-flex flex-column justify-content-center">
                         <h2 class="display-3 fw-bold text-dark mb-3">Carl Joseph Poonin</h2>
                         <span class="badge bg-secondary rounded-pill px-4 py-2 fs-6 mb-4 align-self-start">
@@ -241,7 +249,7 @@
                             and IT, and I am committed to enhancing my technical expertise in these fields.
                         </p>
                         <hr class="my-4">
-                            <h5 class="fw-bold text-dark mb-4">Skills</h5>
+                        <h5 class="fw-bold text-dark mb-4">Skills</h5>
                         <div class="d-flex flex-wrap gap-3">
                             <span class="badge bg-secondary rounded-pill px-4 py-2 fs-6">HTML</span>
                             <span class="badge bg-secondary rounded-pill px-4 py-2 fs-6">CSS</span>
@@ -257,7 +265,7 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="row align-items-center">
@@ -278,7 +286,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card border-0 shadow rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="row align-items-center">
@@ -299,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card border-0 shadow rounded-4 h-100">
                         <div class="card-body p-4">
                             <div class="row align-items-center">
@@ -333,13 +341,13 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-1 fw-semibold text-end py-5" style="font-size: 6rem;">
+                    <h1 class="display-1 fw-semibold text-end py-5" style="font-size: 6rem;" data-aos="fade-up">
                         Contact
                     </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <p class="mb-4" style="font-size: 0.95rem; line-height: 1.7;">
                         I'm always open to discussing new opportunities, collaborations, or innovative projects. 
                         Please feel free to reach out through the contact form or connect with me via the 
@@ -362,7 +370,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-6 col-sm-12 mx-auto">
+                <div class="col-lg-6 col-sm-12 mx-auto" data-aos="fade-up" data-aos-delay="200">
                     <form class="form-control bg-dark text-white p-3 rounded-4 shadow">
                         <div class="mb-3">
                             <label for="name" class="form-label fw-semibold">Full Name</label>
@@ -378,7 +386,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label fw-semibold">Message</label>
-                                <textarea class="form-control" id="message" rows="2" placeholder="Please provide details about your inquiry..." required></textarea>
+                            <textarea class="form-control" id="message" rows="2" placeholder="Please provide details about your inquiry..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary px-4 fw-semibold w-100">
                             Send Message
@@ -399,7 +407,8 @@
         </div>
     </footer>
 
-    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous">
     </script>
