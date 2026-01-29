@@ -1,0 +1,204 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar .navbar-brand:hover{
+    color: #fff;
+}
+
+.navbar a{
+    color: #fff;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 0px 6px black;
+}
+
+.hero-section{
+    color: #fff;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 80%, black 100%), url('img/AOT-bg.png');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+    padding: 8% 3% 0%;
+}
+
+.hero-title{
+    color: #fff;
+    font-size: clamp(2rem , 6vw, 6.3rem);
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero-description{
+    color: #fff;
+    font-size: clamp(0.8rem , 2vw, 1rem);
+    font-family: "Montserrat", sans-serif;
+}
+
+.hero-section button{
+    color: #fff;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 6px;
+    border: 0px;
+    margin: 1% auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.btn-watch{
+    background-color: #940000;
+    box-shadow: 0px 0px 4px #000;
+    color: #fff;
+}
+
+.btn-watch:hover{
+    background-color: #7a0000;
+}
+
+.slider-section{
+    margin-top: 5rem;
+    min-height: 50dvh;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-section h1 {
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 3.8rem);
+    text-align: center;
+}
+
+.slider-section p {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    text-align: justify;
+}
+
+.about-section{
+    min-height: 150vh;
+}
+
+.about-section h1{
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 4.3rem);
+    text-align: center;
+}
+
+.about-section p{
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    text-align: justify;
+}
+
+
+.gallery-section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titans-heading {
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 4.3rem);
+    text-align: center;
+}
+
+.card img {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+    padding: 0.8rem;
+}
+
+.card p{
+    margin-top: 1rem;
+    text-align: left;
+    font-weight: 300;
+    font-family: "Jost", sans-serif;
+}
+
+.card strong{
+    color: #db0000;
+    font-weight: 600;
+    font-family: "Jost", sans-serif;
+}
+
+.card .show-details{
+    font-weight: 300;
+    font-family: "Jost", sans-serif;
+}
+
+.gallery-section input{
+    border: none;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+}
+
+.contact-section{
+    min-height: 40vh;
+}
+
+.contact-section h1{
+    font-weight: 700;
+    font-family: "Jost", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 4.3rem);
+    text-align: center;
+}
+
+.contact-section h5{
+    font-family: "Jost", sans-serif;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.contact-section a{
+    font-family: "Jost", sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: #bd0000;
+}
+
+.btn-view{
+    background-color: #940000;
+    color: #fff;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 6px;
+    border: 0px;
+    margin: 2rem auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.btn-view:hover{
+    background-color: #7a0000;
+}
+
+.footer p{
+    font-family: "Jost", sans-serif;
+}
