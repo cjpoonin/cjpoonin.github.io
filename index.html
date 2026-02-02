@@ -198,14 +198,23 @@
             <div class="display-3 my-4 text-center" data-aos="fade-up">
                 Multimedia Projects
             </div>
-            <div class="container">
-                <div class="collage-grid" data-aos="fade-up">
-                    <img src="Projects/Multimedia/image/Out of Bounds.jpg" alt="Out of Bounds">
-                    <img src="Projects/Multimedia/image/Ghost Effect.jpg" alt="Ghost Effect">
-                    <img src="Projects/Multimedia/image/Calling Card Front.jpg" alt="Calling Card Front">
-                    <img src="Projects/Multimedia/image/Movie Poster.jpg" alt="Collage Duplicate">
-                    <img src="Projects/Multimedia/image/Calling Card Back.jpg" alt="Calling Card Back">
-                    <img src="Projects/Multimedia/image/Collage.jpg" alt="Collage">
+           <div class="container">
+                <div class="collage-grid">
+                    <img src="Projects/Multimedia/image/Out of Bounds.jpg" class="view-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <img src="Projects/Multimedia/image/Ghost Effect.jpg" class="view-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <img src="Projects/Multimedia/image/Calling Card Front.jpg" class="view-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <img src="Projects/Multimedia/image/Movie Poster.jpg" class="view-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <img src="Projects/Multimedia/image/Calling Card Back.jpg" class="view-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <img src="Projects/Multimedia/image/Collage.jpg" class="view-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                </div>
+            </div>
+            <div class="modal fade" id="imageModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content bg-transparent border-0">
+                        <div class="modal-body p-0 text-center">
+                            <img id="modalImage" class="img-fluid rounded">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="display-3 my-2 mt-5 mx-auto" data-aos="fade-up">
@@ -421,11 +430,20 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous">
     </script>
-    
+
+    <script>
+        document.querySelectorAll('.view-img').forEach(img => {
+            img.addEventListener('click', () => {
+                document.getElementById('modalImage').src = img.src;
+            });
+        });
+    </script>
+
 </body>
 
 </html>
