@@ -27,51 +27,77 @@
             background: #f8f9fa;
         }
 
-        .page {
-            width: 210mm;
-            height: 297mm;
-            padding: 12mm 15mm;
-            margin: 20px auto;
+        /* ── Page / Card wrapper ── */
+        .resume-card {
             background: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
+            padding: 2rem 1.5rem;
+            /* mobile default */
+            border-radius: 0;
         }
 
+        @media (min-width: 576px) {
+            .resume-card {
+                padding: 2.5rem 2rem;
+                border-radius: 4px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .resume-card {
+                padding: 3rem 2.5rem;
+            }
+        }
+
+        /* ── Header ── */
         header {
             text-align: center;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
             border-bottom: 2px solid #212529;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: clamp(20px, 5vw, 28px);
             color: #212529;
-            margin-bottom: 6px;
+            margin-bottom: 0.4rem;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
 
         .contact-info {
-            font-size: 10.5px;
+            font-size: clamp(9.5px, 2.5vw, 10.5px);
             color: #6c757d;
-            margin-top: 8px;
-            line-height: 1.6;
+            margin-top: 0.5rem;
+            line-height: 1.8;
         }
 
-        .contact-info span {
-            margin: 0 8px;
+        /* Stack contact spans on very small screens */
+        .contact-info .contact-sep {
+            display: inline;
         }
 
+        @media (max-width: 480px) {
+            .contact-info .contact-sep {
+                display: none;
+            }
+
+            .contact-info span {
+                display: block;
+                margin: 0;
+            }
+        }
+
+        /* ── Sections ── */
         .section {
-            margin-bottom: 18px;
+            margin-bottom: 1.25rem;
         }
 
         h2 {
-            font-size: 14px;
+            font-size: clamp(11px, 2.8vw, 14px);
             color: #212529;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 0.65rem;
             padding-bottom: 4px;
             border-bottom: 2px solid #6c757d;
             font-weight: 600;
@@ -79,59 +105,62 @@
         }
 
         .summary {
-            font-size: 10.5px;
+            font-size: clamp(9.5px, 2.4vw, 10.5px);
             text-align: justify;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #495057;
         }
 
+        /* ── Projects ── */
         .project-item {
-            margin-bottom: 14px;
+            margin-bottom: 1rem;
         }
 
         .project-title {
-            font-size: 11.5px;
+            font-size: clamp(10.5px, 2.6vw, 11.5px);
             font-weight: 600;
             color: #212529;
             margin-bottom: 2px;
         }
 
         .project-date {
-            font-size: 9.5px;
+            font-size: clamp(8.5px, 2.2vw, 9.5px);
             color: #6c757d;
             font-style: italic;
             margin-bottom: 4px;
         }
 
         .project-description {
-            font-size: 10px;
-            line-height: 1.5;
+            font-size: clamp(9px, 2.3vw, 10px);
+            line-height: 1.55;
             color: #495057;
         }
 
+        /* ── Education ── */
         .education-item {
-            margin-bottom: 12px;
+            margin-bottom: 0.85rem;
         }
 
         .institution {
-            font-size: 11.5px;
+            font-size: clamp(10.5px, 2.6vw, 11.5px);
             font-weight: 600;
             color: #212529;
         }
 
         .degree {
-            font-size: 10px;
+            font-size: clamp(9px, 2.3vw, 10px);
             color: #495057;
             margin-top: 2px;
         }
 
         .education-date {
-            font-size: 9.5px;
+            font-size: clamp(8.5px, 2.2vw, 9.5px);
             color: #6c757d;
             font-style: italic;
             margin-top: 2px;
         }
 
+        /* ── Skills ── */
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -139,8 +168,8 @@
         }
 
         .skill-category {
-            font-size: 10px;
-            line-height: 1.5;
+            font-size: clamp(9px, 2.3vw, 10px);
+            line-height: 1.55;
             color: #495057;
         }
 
@@ -149,28 +178,43 @@
             font-weight: 600;
         }
 
-        hr {
-            border: 0;
-            border-top: 1px solid #dee2e6;
-            margin: 15px 0;
+        /* ── Action buttons ── */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.5rem 1rem;
         }
 
-        .no-print {
-            display: block;
+        .action-buttons .btn {
+            flex: 1 1 auto;
+            min-width: 180px;
+            max-width: 260px;
         }
 
+        @media (max-width: 400px) {
+            .action-buttons .btn {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* ── Print styles ── */
         @media print {
             body {
                 background: white;
             }
 
-            .page {
-                width: 210mm;
-                height: 297mm;
+            .resume-wrapper {
+                max-width: 210mm !important;
+                padding: 0 !important;
+            }
+
+            .resume-card {
                 box-shadow: none;
-                margin: 0;
                 padding: 12mm 15mm;
-                page-break-after: avoid;
+                border-radius: 0;
             }
 
             .no-print {
@@ -185,136 +229,157 @@
 </head>
 
 <body>
-    <div class="page">
-        <header>
-            <h1>CARL JOSEPH POONIN</h1>
-            <div class="contact-info">
-                Zone 3, Barangay Natatas, Tanauan City, Batangas
-                <br>
-                <span>0945 580 7830</span> | <span>cjaypoonin@gmail.com</span> | <span>cjpoonin.github.io</span>
-            </div>
-        </header>
+    <!-- Responsive outer wrapper -->
+    <div class="container-fluid px-0 px-sm-3 py-3 py-md-4 resume-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-11 col-md-10 col-lg-9 col-xl-8">
 
-        <div class="section">
-            <h2>Professional Summary</h2>
-            <p class="summary">
-                Motivated and detail-oriented third-year Information Technology student at Polytechnic University of the
-                Philippines, Sto. Tomas Campus, with demonstrated proficiency in full-stack development, database
-                management, and UI/UX design. Proven ability to deliver functional and user-centric solutions through
-                academic and collaborative projects. Seeking opportunities to apply technical expertise in programming
-                languages including C#, Python, PHP, and Java, combined with strong problem-solving abilities and a
-                commitment to producing high-quality work in dynamic team environments.
-            </p>
+                <!-- Resume card -->
+                <div class="resume-card">
+
+                    <header>
+                        <h1>CARL JOSEPH POONIN</h1>
+                        <div class="contact-info">
+                            Zone 3, Barangay Natatas, Tanauan City, Batangas
+                            <br>
+                            <span>0945 580 7830</span><span class="contact-sep"> | </span>
+                            <span>cjaypoonin@gmail.com</span><span class="contact-sep"> | </span>
+                            <span>cjpoonin.github.io</span>
+                        </div>
+                    </header>
+
+                    <div class="section">
+                        <h2>Professional Summary</h2>
+                        <p class="summary">
+                            Motivated and detail-oriented third-year Information Technology student at Polytechnic
+                            University of the Philippines, Sto. Tomas Campus, with demonstrated proficiency in
+                            full-stack development, database management, and UI/UX design. Proven ability to deliver
+                            functional and user-centric solutions through academic and collaborative projects. Seeking
+                            opportunities to apply technical expertise in programming languages including C#, Python,
+                            PHP, and Java, combined with strong problem-solving abilities and a commitment to producing
+                            high-quality work in dynamic team environments.
+                        </p>
+                    </div>
+
+                    <div class="section">
+                        <h2>Project Experience</h2>
+
+                        <div class="project-item">
+                            <div class="project-title">Hotel Room Booking Management System</div>
+                            <div class="project-date">January 2026</div>
+                            <p class="project-description">
+                                Developed a comprehensive booking management system utilizing C# programming language
+                                with PostgreSQL database integration. Implemented core functionalities including room
+                                availability tracking, reservation processing, and customer data management with a focus
+                                on system efficiency and data integrity.
+                            </p>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-title">ABC Nursery Website – Collaborative Team Project</div>
+                            <div class="project-date">2025</div>
+                            <p class="project-description">
+                                Collaborated with a team to design and develop a fully responsive nursery website
+                                utilizing HTML, CSS, Bootstrap, and PHP. Integrated RESTful API for dynamic data
+                                handling and created an engaging, user-friendly interface that enhanced customer
+                                experience and business functionality.
+                            </p>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-title">Reselling Cars System – Collaborative Team Project</div>
+                            <div class="project-date">2025</div>
+                            <p class="project-description">
+                                Built a responsive automotive resale platform using Python with MySQL backend
+                                integration. Developed features for vehicle listing management, search functionality,
+                                and transaction processing while ensuring optimal performance and database reliability.
+                            </p>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-title">Java Gaming Suite – Collaborative Team Project</div>
+                            <div class="project-date">2024</div>
+                            <p class="project-description">
+                                Contributed to the development of three interactive games using Java programming
+                                language, including a classic Snake game. Applied object-oriented programming principles
+                                and implemented game logic, user controls, and dynamic graphics rendering to create
+                                engaging gameplay experiences.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>Education</h2>
+
+                        <div class="education-item">
+                            <div class="institution">Polytechnic University of the Philippines – Sto. Tomas Branch</div>
+                            <div class="degree">Diploma in Information Technology (DIT)</div>
+                            <div class="education-date">2026 – Present (Currently 3rd Year)</div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="institution">Nova Schola Tanauan</div>
+                            <div class="degree">Senior High School – Science, Technology, Engineering, and Mathematics
+                                (STEM) Strand</div>
+                            <div class="education-date">2020 – 2022</div>
+                        </div>
+
+                        <div class="education-item">
+                            <div class="institution">Natatas National High School</div>
+                            <div class="degree">Junior High School (Grades 7–10)</div>
+                            <div class="education-date">2016 – 2020</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>Technical Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C, C++, C#, PHP,
+                                Java
+                            </div>
+                            <div class="skill-category">
+                                <strong>Database Management:</strong> PostgreSQL, MySQL
+                            </div>
+                            <div class="skill-category">
+                                <strong>Design Tools:</strong> Figma, Adobe Photoshop, Adobe Illustrator, Evolus
+                                Pencil, Canva
+                            </div>
+                            <div class="skill-category">
+                                <strong>Productivity Tools:</strong> Microsoft Word, Microsoft Excel, Google Docs,
+                                Microsoft Teams
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /resume-card -->
+
+                <!-- Buttons -->
+                <div class="action-buttons no-print">
+                    <button onclick="window.print()" class="btn btn-dark btn-lg rounded-pill shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-printer me-2" viewBox="0 0 16 16" style="vertical-align: middle;">
+                            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+                            <path
+                                d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
+                        </svg>
+                        Print Resume
+                    </button>
+                    <button onclick="downloadDOCX()" class="btn btn-primary btn-lg rounded-pill shadow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-download me-2" viewBox="0 0 16 16" style="vertical-align: middle;">
+                            <path
+                                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                            <path
+                                d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                        </svg>
+                        Download as DOCX
+                    </button>
+                </div>
+
+            </div>
         </div>
-
-        <div class="section">
-            <h2>Project Experience</h2>
-
-            <div class="project-item">
-                <div class="project-title">Hotel Room Booking Management System</div>
-                <div class="project-date">January 2026</div>
-                <p class="project-description">
-                    Developed a comprehensive booking management system utilizing C# programming language with
-                    PostgreSQL database integration. Implemented core functionalities including room availability
-                    tracking, reservation processing, and customer data management with a focus on system efficiency and
-                    data integrity.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">ABC Nursery Website – Collaborative Team Project</div>
-                <div class="project-date">2025</div>
-                <p class="project-description">
-                    Collaborated with a team to design and develop a fully responsive nursery website utilizing HTML,
-                    CSS, Bootstrap, and PHP. Integrated RESTful API for dynamic data handling and created an engaging,
-                    user-friendly interface that enhanced customer experience and business functionality.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">Reselling Cars System – Collaborative Team Project</div>
-                <div class="project-date">2025</div>
-                <p class="project-description">
-                    Built a responsive automotive resale platform using Python with MySQL backend integration. Developed
-                    features for vehicle listing management, search functionality, and transaction processing while
-                    ensuring optimal performance and database reliability.
-                </p>
-            </div>
-
-            <div class="project-item">
-                <div class="project-title">Java Gaming Suite – Collaborative Team Project</div>
-                <div class="project-date">2024</div>
-                <p class="project-description">
-                    Contributed to the development of three interactive games using Java programming language, including
-                    a classic Snake game. Applied object-oriented programming principles and implemented game logic,
-                    user controls, and dynamic graphics rendering to create engaging gameplay experiences.
-                </p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Education</h2>
-
-            <div class="education-item">
-                <div class="institution">Polytechnic University of the Philippines – Sto. Tomas Branch</div>
-                <div class="degree">Diploma in Information Technology (DIT)</div>
-                <div class="education-date">2026 – Present (Currently 3nd Year)</div>
-            </div>
-
-            <div class="education-item">
-                <div class="institution">Nova Schola Tanauan</div>
-                <div class="degree">Senior High School – Science, Technology, Engineering, and Mathematics (STEM) Strand
-                </div>
-                <div class="education-date">2020 – 2022</div>
-            </div>
-
-            <div class="education-item">
-                <div class="institution">Natatas National High School</div>
-                <div class="degree">Junior High School (Grades 7–10)</div>
-                <div class="education-date">2016 – 2020</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C, C++, C#, PHP, Java
-                </div>
-                <div class="skill-category">
-                    <strong>Database Management:</strong> PostgreSQL, MySQL
-                </div>
-                <div class="skill-category">
-                    <strong>Design Tools:</strong> Figma, Adobe Photoshop, Adobe Illustrator, Evolus Pencil, Canva
-                </div>
-                <div class="skill-category">
-                    <strong>Productivity Tools:</strong> Microsoft Word, Microsoft Excel, Google Docs, Microsoft Teams
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Print and Download Buttons -->
-    <div class="text-center my-4 no-print">
-        <button onclick="window.print()" class="btn btn-dark btn-lg px-5 rounded-pill shadow me-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-printer me-2" viewBox="0 0 16 16" style="vertical-align: middle;">
-                <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
-                <path
-                    d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1" />
-            </svg>
-            Print Resume
-        </button>
-        <button onclick="downloadDOCX()" class="btn btn-primary btn-lg px-5 rounded-pill shadow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-download me-2" viewBox="0 0 16 16" style="vertical-align: middle;">
-                <path
-                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
-                <path
-                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-            </svg>
-            Download as DOCX
-        </button>
     </div>
 
     <script type="module">
@@ -331,7 +396,6 @@
                     sections: [{
                         properties: {},
                         children: [
-                            // Header
                             new Paragraph({
                                 text: "CARL JOSEPH POONIN",
                                 heading: HeadingLevel.HEADING_1,
@@ -340,46 +404,21 @@
                             }),
                             new Paragraph({
                                 alignment: AlignmentType.CENTER,
-                                children: [
-                                    new TextRun({
-                                        text: "Zone 3, Barangay Natatas, Tanauan City, Batangas",
-                                        size: 20
-                                    })
-                                ],
+                                children: [new TextRun({ text: "Zone 3, Barangay Natatas, Tanauan City, Batangas", size: 20 })],
                                 spacing: { after: 50 }
                             }),
                             new Paragraph({
                                 alignment: AlignmentType.CENTER,
-                                children: [
-                                    new TextRun({
-                                        text: "0945 580 7830 | cjaypoonin@gmail.com | cjpoonin.github.io",
-                                        size: 20
-                                    })
-                                ],
+                                children: [new TextRun({ text: "0945 580 7830 | cjaypoonin@gmail.com | cjpoonin.github.io", size: 20 })],
                                 spacing: { after: 200 },
-                                border: {
-                                    bottom: {
-                                        color: "000000",
-                                        space: 1,
-                                        style: BorderStyle.SINGLE,
-                                        size: 12
-                                    }
-                                }
+                                border: { bottom: { color: "000000", space: 1, style: BorderStyle.SINGLE, size: 12 } }
                             }),
 
-                            // Professional Summary
                             new Paragraph({
                                 text: "PROFESSIONAL SUMMARY",
                                 heading: HeadingLevel.HEADING_2,
                                 spacing: { before: 200, after: 100 },
-                                border: {
-                                    bottom: {
-                                        color: "6c757d",
-                                        space: 1,
-                                        style: BorderStyle.SINGLE,
-                                        size: 6
-                                    }
-                                }
+                                border: { bottom: { color: "6c757d", space: 1, style: BorderStyle.SINGLE, size: 6 } }
                             }),
                             new Paragraph({
                                 text: "Motivated and detail-oriented third-year Information Technology student at Polytechnic University of the Philippines, Sto. Tomas Campus, with demonstrated proficiency in full-stack development, database management, and UI/UX design. Proven ability to deliver functional and user-centric solutions through academic and collaborative projects. Seeking opportunities to apply technical expertise in programming languages including C#, Python, PHP, and Java, combined with strong problem-solving abilities and a commitment to producing high-quality work in dynamic team environments.",
@@ -387,273 +426,59 @@
                                 alignment: AlignmentType.JUSTIFIED
                             }),
 
-                            // Project Experience
                             new Paragraph({
                                 text: "PROJECT EXPERIENCE",
                                 heading: HeadingLevel.HEADING_2,
                                 spacing: { before: 200, after: 100 },
-                                border: {
-                                    bottom: {
-                                        color: "6c757d",
-                                        space: 1,
-                                        style: BorderStyle.SINGLE,
-                                        size: 6
-                                    }
-                                }
+                                border: { bottom: { color: "6c757d", space: 1, style: BorderStyle.SINGLE, size: 6 } }
                             }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Hotel Room Booking Management System",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "January 2026",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                text: "Developed a comprehensive booking management system utilizing C# programming language with PostgreSQL database integration. Implemented core functionalities including room availability tracking, reservation processing, and customer data management with a focus on system efficiency and data integrity.",
-                                spacing: { after: 150 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "Hotel Room Booking Management System", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "January 2026", italics: true, size: 19 })], spacing: { after: 100 } }),
+                            new Paragraph({ text: "Developed a comprehensive booking management system utilizing C# programming language with PostgreSQL database integration. Implemented core functionalities including room availability tracking, reservation processing, and customer data management with a focus on system efficiency and data integrity.", spacing: { after: 150 } }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "ABC Nursery Website – Collaborative Team Project",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "2025",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                text: "Collaborated with a team to design and develop a fully responsive nursery website utilizing HTML, CSS, Bootstrap, and PHP. Integrated RESTful API for dynamic data handling and created an engaging, user-friendly interface that enhanced customer experience and business functionality.",
-                                spacing: { after: 150 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "ABC Nursery Website – Collaborative Team Project", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "2025", italics: true, size: 19 })], spacing: { after: 100 } }),
+                            new Paragraph({ text: "Collaborated with a team to design and develop a fully responsive nursery website utilizing HTML, CSS, Bootstrap, and PHP. Integrated RESTful API for dynamic data handling and created an engaging, user-friendly interface that enhanced customer experience and business functionality.", spacing: { after: 150 } }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Reselling Cars System – Collaborative Team Project",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "2025",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                text: "Built a responsive automotive resale platform using Python with MySQL backend integration. Developed features for vehicle listing management, search functionality, and transaction processing while ensuring optimal performance and database reliability.",
-                                spacing: { after: 150 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "Reselling Cars System – Collaborative Team Project", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "2025", italics: true, size: 19 })], spacing: { after: 100 } }),
+                            new Paragraph({ text: "Built a responsive automotive resale platform using Python with MySQL backend integration. Developed features for vehicle listing management, search functionality, and transaction processing while ensuring optimal performance and database reliability.", spacing: { after: 150 } }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Java Gaming Suite – Collaborative Team Project",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "2024",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                text: "Contributed to the development of three interactive games using Java programming language, including a classic Snake game. Applied object-oriented programming principles and implemented game logic, user controls, and dynamic graphics rendering to create engaging gameplay experiences.",
-                                spacing: { after: 200 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "Java Gaming Suite – Collaborative Team Project", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "2024", italics: true, size: 19 })], spacing: { after: 100 } }),
+                            new Paragraph({ text: "Contributed to the development of three interactive games using Java programming language, including a classic Snake game. Applied object-oriented programming principles and implemented game logic, user controls, and dynamic graphics rendering to create engaging gameplay experiences.", spacing: { after: 200 } }),
 
-                            // Education
                             new Paragraph({
                                 text: "EDUCATION",
                                 heading: HeadingLevel.HEADING_2,
                                 spacing: { before: 200, after: 100 },
-                                border: {
-                                    bottom: {
-                                        color: "6c757d",
-                                        space: 1,
-                                        style: BorderStyle.SINGLE,
-                                        size: 6
-                                    }
-                                }
+                                border: { bottom: { color: "6c757d", space: 1, style: BorderStyle.SINGLE, size: 6 } }
                             }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Polytechnic University of the Philippines – Sto. Tomas Branch",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                text: "Diploma in Information Technology (DIT)",
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "2026 – Present (Currently 3nd Year)",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 150 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "Polytechnic University of the Philippines – Sto. Tomas Branch", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ text: "Diploma in Information Technology (DIT)", spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "2026 – Present (Currently 3rd Year)", italics: true, size: 19 })], spacing: { after: 150 } }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Nova Schola Tanauan",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                text: "Senior High School – Science, Technology, Engineering, and Mathematics (STEM) Strand",
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "2020 – 2022",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 150 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "Nova Schola Tanauan", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ text: "Senior High School – Science, Technology, Engineering, and Mathematics (STEM) Strand", spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "2020 – 2022", italics: true, size: 19 })], spacing: { after: 150 } }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Natatas National High School",
-                                        bold: true,
-                                        size: 22
-                                    })
-                                ],
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                text: "Junior High School (Grades 7–10)",
-                                spacing: { after: 50 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "2016 – 2020",
-                                        italics: true,
-                                        size: 19
-                                    })
-                                ],
-                                spacing: { after: 200 }
-                            }),
+                            new Paragraph({ children: [new TextRun({ text: "Natatas National High School", bold: true, size: 22 })], spacing: { after: 50 } }),
+                            new Paragraph({ text: "Junior High School (Grades 7–10)", spacing: { after: 50 } }),
+                            new Paragraph({ children: [new TextRun({ text: "2016 – 2020", italics: true, size: 19 })], spacing: { after: 200 } }),
 
-                            // Technical Skills
                             new Paragraph({
                                 text: "TECHNICAL SKILLS",
                                 heading: HeadingLevel.HEADING_2,
                                 spacing: { before: 200, after: 100 },
-                                border: {
-                                    bottom: {
-                                        color: "6c757d",
-                                        space: 1,
-                                        style: BorderStyle.SINGLE,
-                                        size: 6
-                                    }
-                                }
+                                border: { bottom: { color: "6c757d", space: 1, style: BorderStyle.SINGLE, size: 6 } }
                             }),
 
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Programming Languages: ",
-                                        bold: true
-                                    }),
-                                    new TextRun({
-                                        text: "HTML, CSS, JavaScript, Python, C, C++, C#, PHP, Java"
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Database Management: ",
-                                        bold: true
-                                    }),
-                                    new TextRun({
-                                        text: "PostgreSQL, MySQL"
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Design Tools: ",
-                                        bold: true
-                                    }),
-                                    new TextRun({
-                                        text: "Figma, Adobe Photoshop, Adobe Illustrator, Evolus Pencil, Canva"
-                                    })
-                                ],
-                                spacing: { after: 100 }
-                            }),
-                            new Paragraph({
-                                children: [
-                                    new TextRun({
-                                        text: "Productivity Tools: ",
-                                        bold: true
-                                    }),
-                                    new TextRun({
-                                        text: "Microsoft Word, Microsoft Excel, Google Docs, Microsoft Teams"
-                                    })
-                                ]
-                            })
+                            new Paragraph({ children: [new TextRun({ text: "Programming Languages: ", bold: true }), new TextRun({ text: "HTML, CSS, JavaScript, Python, C, C++, C#, PHP, Java" })], spacing: { after: 100 } }),
+                            new Paragraph({ children: [new TextRun({ text: "Database Management: ", bold: true }), new TextRun({ text: "PostgreSQL, MySQL" })], spacing: { after: 100 } }),
+                            new Paragraph({ children: [new TextRun({ text: "Design Tools: ", bold: true }), new TextRun({ text: "Figma, Adobe Photoshop, Adobe Illustrator, Evolus Pencil, Canva" })], spacing: { after: 100 } }),
+                            new Paragraph({ children: [new TextRun({ text: "Productivity Tools: ", bold: true }), new TextRun({ text: "Microsoft Word, Microsoft Excel, Google Docs, Microsoft Teams" })] })
                         ]
                     }]
                 });
