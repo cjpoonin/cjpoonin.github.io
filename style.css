@@ -398,15 +398,19 @@ body[data-theme="dark"] .fc-link img {
 }
 
 .project-tile:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.355);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
 .project-img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    height: 200px;
+    height: 55%;
     object-fit: cover;
+    flex: 1;
+}
+
+.project-wide .project-img {
+    height: 60%;
 }
 
 .project-meta {
