@@ -94,8 +94,8 @@ img {
 
 .floating-controls {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
     z-index: 50;
     display: flex;
     gap: 8px;
